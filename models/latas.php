@@ -1,6 +1,6 @@
 <?php 
 class qtd{
-
+    //Recebe as informações do controller e faz o calculo das latas
     public function calculoLatas($tinta){
         if($tinta >= 18){
 

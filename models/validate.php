@@ -1,6 +1,7 @@
 <?php 
 class validate{
 
+	//faz a validações das paredes
 	public function validacao($res1, $res2, $res3, $res4){
 		//validação da primeira parede
 		if($res1 < 1){

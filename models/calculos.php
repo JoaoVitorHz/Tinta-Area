@@ -2,6 +2,7 @@
 include "validate.php";
 
 class calculo{
+	//recebe os dados do controller, faz o calculo da area e manda de volta pro controller
 	public function calculo($alt1, $larg1, $qtdJanela1, $qtdPortas1,
                             $alt2, $larg2, $qtdJanela2, $qtdPortas2, 
                             $alt3, $larg3, $qtdJanela3, $qtdPortas3, 

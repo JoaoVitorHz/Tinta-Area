@@ -66,8 +66,10 @@
         </div>
 
 <?php 
+
 include "../controller/controller.php";
 if (isset($_POST['send'])){
+    //Coleta da informações no INPUT
     //PORTA1
     (!empty($_POST['altura1']) ? $alt1 = $_POST['altura1'] : $alt1 = 0);
     (!empty($_POST['largura1']) ? $larg1 = $_POST['largura1'] : $larg1 = 0);
@@ -96,6 +98,7 @@ if (isset($_POST['send'])){
     (!empty($_POST['janela4']) ? $qtdJanela4 = $_POST['janela4'] : $qtdJanela4 = 0);
     (!empty($_POST['porta4']) ? $qtdPortas4 = $_POST['porta4'] : $qtdPortas4 = 0);
 
+    //Mandando as informações para controller e pegando a resposta do controller.
     $i = new controller();
     $resposta = $i->calculos($alt1, $larg1, $qtdJanela1, $qtdPortas1,
                             $alt2, $larg2, $qtdJanela2, $qtdPortas2, 
@@ -103,6 +106,8 @@ if (isset($_POST['send'])){
                             $alt4, $larg4, $qtdJanela4, $qtdPortas4);
 
     $valores = $i->latas($resposta);
+
+    //Verificação para saber se vou exibir um erro ou uma informação.
     (is_numeric($resposta) == true) ? $resposta = $resposta : $resposta = $erro;  
 }
  ?> 
