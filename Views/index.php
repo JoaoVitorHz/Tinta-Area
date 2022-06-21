@@ -66,8 +66,7 @@
         </div>
 
 <?php 
-include "../models/calculos.php";
-include "../models/latas.php";
+include "../controller/controller.php";
 if (isset($_POST['send'])){
     //PORTA1
     (!empty($_POST['altura1']) ? $alt1 = $_POST['altura1'] : $alt1 = 0);
@@ -97,24 +96,19 @@ if (isset($_POST['send'])){
     (!empty($_POST['janela4']) ? $qtdJanela4 = $_POST['janela4'] : $qtdJanela4 = 0);
     (!empty($_POST['porta4']) ? $qtdPortas4 = $_POST['porta4'] : $qtdPortas4 = 0);
 
-    $i = new calculo();
-    $resposta = $i->calculo($alt1, $larg1, $qtdJanela1, $qtdPortas1,
+    $i = new controller();
+    $resposta = $i->calculos($alt1, $larg1, $qtdJanela1, $qtdPortas1,
                             $alt2, $larg2, $qtdJanela2, $qtdPortas2, 
                             $alt3, $larg3, $qtdJanela3, $qtdPortas3, 
                             $alt4, $larg4, $qtdJanela4, $qtdPortas4);
 
-    $a = new qtd();
-    $valores = $a->calculoLatas(40);
+    $valores = $i->latas($resposta);
+    (is_numeric($resposta) == true) ? $resposta = $resposta : $resposta = $erro;  
 }
-
-$resposta = $resposta ?? '0';
-(is_numeric($resposta) == true) ? $resposta = $resposta : $resposta = $erro;  
-$valores = $valores ?? '0';
  ?> 
-
         <div class="info">
-            <p>Você vai precisar pintar uma aréa de: <?php echo $resposta?>  m²!</p>
-            <p>Você vai preciar de <?php echo $valores?> !</p>
+            <p>Você vai precisar pintar uma aréa de: <?php echo $resposta ?? '0'?>  m²!</p>
+            <p>Você vai preciar de <?php echo $valores ?? '0'?> !</p>
             <p><?php echo $erro ?? ''?></p>
             <button type="submit" name="send">Calcular</button>
         </div>

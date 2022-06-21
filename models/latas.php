@@ -1,5 +1,5 @@
 <?php 
-Class qtd {
+class qtd{
 
     public function calculoLatas($tinta){
         if($tinta >= 18){
