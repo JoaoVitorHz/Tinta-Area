@@ -1,3 +1,5 @@
+## Sobre o projeto 
+O sistema calcula a area das paredes que você informar, e também te recomenda a latas que você vai precisar, evitando disperdicio. 
 ## Itens usados 
 - HTML 
 - CSS
