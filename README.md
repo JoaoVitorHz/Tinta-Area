@@ -7,11 +7,11 @@ Aqui esta o link do desafio. https://gitlab.com/digitalrepublic/code-challenge�
 - Css
 - PHP (Usei MVC e POO)
  
- ## Para usar o projeto 
+ ## Requisitos
  - Para você usar o projeto e necessario que você tenha instaldo um servidor do lado Web para o projeto funcionar eu usei o Apache.
  - Você pode encontra o Apache em pacotes como: XAMP. 
  
- ## Requisitos
+ ## Para usar o projeto
  - Vá ate o seu navegador e digite o caminho ate a pasta do projeto, `localhost/Views`
  
  ## Como usar
